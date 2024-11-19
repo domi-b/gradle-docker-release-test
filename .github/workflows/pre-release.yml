@@ -105,6 +105,6 @@ jobs:
           push-to-registry: true
   
       - name: Create GitHub pre-release
-        run: gh release create ${{ env.VERSION_TAG }} --title "${{ env.VERSION_TAG }}" --prerelease --target ${{ github.ref }} build/distributions/*.zip
+        run: gh release create "v${{ env.VERSION }}" --title "v${{ env.VERSION }}" --prerelease --target ${{ github.ref }} ./build/distributions/*.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
